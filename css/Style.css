@@ -1,0 +1,241 @@
+﻿body {
+}
+.LarguraMenu {
+	width:950px;
+}
+.TextVermelho10N {
+	font-family:Verdana;
+	font-size:10px;
+	font-weight:bold;
+	color:Red;
+}
+.CampoBorda 
+{
+	border:solid 1px #DCDCDC;
+	color:#666666;
+	font-family: Verdana;
+	font-size: 11px;
+}
+
+.MenuIndex {
+	background-color:#D6DFF7;
+	font-family:Verdana;
+	font-size:10px;
+	color:#274C90;
+	font-weight:bold;
+	text-align:left;
+	height:24px;
+	padding-left:8px;
+}
+.MenuIndex a {
+	text-decoration:none;
+	color:#274C90;
+}
+.SubMenuIndex {
+	background-color:#E6E6E6;
+	font-family:Verdana;
+	font-size:10px;
+	font-weight:bold;
+	color:#274C90;
+	height:20px;
+	padding:5px;
+}
+.SubMenuIndex a {
+text-decoration:none;
+color:#274C90;
+}
+.SubMenuIndex a:hover 
+{
+	color:#3465C0;
+	text-decoration:none;
+}
+.Content {
+    vertical-align: top;
+    text-align:center;
+    padding:5px;
+}
+
+.Borda1N 
+{
+	border:solid 1px #274C90;
+}
+
+/* PAGINA PADRAO */
+.TextoTopo {
+	background-color:#00aeef;
+	font-family:Verdana;
+	font-size:11px;
+	color:#FFFFFF;
+	font-weight:bold;
+	text-align:center;
+	height:22px;
+}
+.TextoTopo2 {
+	background-color:#00aeef;
+	color:#FFFFFF;
+	font-family: Verdana;
+	font-size: 11px;
+	width:100px;
+	font-weight:bold;
+	text-align:center;
+	height:22px;
+}
+.TextoNormal {
+	font-family:Verdana;
+	font-size:11px;
+	color:#274C90;
+	font-weight:normal;
+	text-align:left;
+	padding-left:5px;
+	height:22px;
+}
+.Literal 
+{
+    color:#333333;
+    font-family:Verdana;
+    font-size:10px;
+    background-color:#fff;
+    border:solid 1px #DCDCDC;
+}   
+.Botao {
+    color:#274C90;
+    font-family:Verdana;
+    font-size:10px;
+    padding-left:5px;
+    padding-right:5px;
+    padding-bottom:2px;
+    padding-top:2px;
+    background-color:#DCDCDC;
+    border:solid 1px #CCCCCC;
+	height:23px;
+
+}
+.Botao2 {
+	background-image:url(../img/bt_del_campos.jpg);
+	width:86px;
+	height:18px;
+	border:0;
+}
+.CampoTexto {
+	border:solid 1px #999999;
+	background-color:#F0F0F0;
+	color:#274C90;
+	font-family: Verdana;
+	font-size: 11px;
+	width:200px;
+}
+.CampoForm {
+	border:solid 1px #999999;
+	background-color:#F0F0F0;
+	color:#274C90;
+	font-family: Verdana;
+	font-size: 11px;
+	width:270px;
+	text-align:center;
+}
+.CampoForm2 {
+	border:solid 1px #999999;
+	background-color:#F0F0F0;
+	color:#274C90;
+	font-family: Verdana;
+	font-size: 11px;
+	width:100px;
+	text-align:center;
+}
+.CampoForm3 {
+	border:solid 1px #999999;
+	background-color:#F0F0F0;
+	color:#274C90;
+	font-family: Verdana;
+	font-size: 11px;
+	width:300px;
+}
+.CampoPesquisa {
+	border:solid 1px #999999;
+	background-color:#F0F0F0;
+	color:#274C90;
+	font-family: Verdana;
+	font-size: 11px;
+	text-align:center;
+}
+.CampoTextosemwidth {
+	border:solid 1px #999999;
+	background-color:#F0F0F0;
+	color:#274C90;
+	font-family: Verdana;
+	font-size: 11px;
+	width:25px;
+}
+.CampoTextoano {
+	border:solid 1px #999999;
+	background-color:#F0F0F0;
+	color:#274C90;
+	font-family: Verdana;
+	font-size: 11px;
+	width:35px;
+}
+.Saudacao {
+	color:#274C90;
+	font-family: Verdana;
+	font-size: 11px;
+	width:200px;
+	padding-top:200px;
+}
+
+/* GRIDVIEW OU DATAGRID */
+.HeaderStyle
+{
+	color:#FFFFFF;
+	font-size:11px;
+	font-family:verdana;
+	text-align:center;
+	font-weight:bold;
+	background:#274C90;
+}
+.PagerStyle
+{
+    FONT-SIZE: 10px;
+    COLOR: #CCCCCC;
+    FONT-FAMILY: Verdana;
+    font-weight:normal;
+}
+.ItemStyle
+{
+	color:#274C90;
+	font-family:verdana;
+	font-size:11px;
+	font-weight:normal;
+	height:20px;
+	padding-left:5px;
+	text-align:center;
+    BACKGROUND-COLOR:#FFFFFF;
+}
+.FooterStyle
+{
+	color:#FFFFFF;
+	font-size:11px;
+	font-family:verdana;
+	text-align:center;
+	font-weight:bold;
+	background:#274C90;
+}
+
+/* FRM MENSAGEM */
+.FundoTabela
+{
+    border:#DCDCDC double 3px;
+	background:#F0F0F0;
+}
+.Mensagem 
+{
+    font-family:Verdana;
+	font-size:11px;
+	color:#274C90;
+	font-weight:normal;
+	text-align:left;
+	padding-left:5px;
+	height:22px;
+}
+img.valign {
+	vertical-align:bottom;
+}

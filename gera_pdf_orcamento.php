@@ -1,0 +1,108 @@
+<?php
+require_once("includes/conexao.php");
+
+$id = mysql_escape_string($_POST['id']);
+$consulta=mysql_query("SELECT * FROM orcamento WHERE id = '$id'");
+$exibe=mysql_fetch_array($consulta);
+
+$meses = array("01" => "Janeiro", "02" => "Fevereiro", "03" => "Março", "04" => "Abril", "05" => "Maio", "06" => "Junho", "07" => "Julho", "08" => "Agosto", "09" => "Setembro", "10" => "Outubro", "11" => "Novembro", "12" => "Dezembro");
+$mes = date("m");
+$mes_extenso = $meses[$mes];
+
+require_once("fpdf/fpdf.php");
+
+$pdf = new FPDF("P","pt", "A4");
+
+$pdf -> AddPage();
+$pdf -> Image('img/logo.gif');
+
+$pdf -> SetFont('helvetica','B', 10);
+$pdf -> Cell(0, 20, " ", 0, 1, 'L');
+$pdf -> Cell(0, 5, "Proposta n: ".$exibe['id']."/".date('y').".", 0, 1, 'L');
+$pdf -> Cell(0, 30, "Rio de Janeiro, ". date('d')." de ".utf8_decode($mes_extenso)." de ".date('Y').".", 0, 1, 'L');
+$pdf -> Cell(0, 5, "Ao senhor(a): ".$exibe['cliente'], 0, 1, 'L');
+$pdf -> Cell(0, 30, "Contato: ".$exibe['email'], 0, 1, 'L');
+$pdf -> Cell(0, 40, "Prezado senhor(a) ".$exibe['cliente'].",", 0, 1, 'L');
+$pdf -> MultiCell(0, 15, utf8_decode("Em prosseguimento aos nossos entendimentos, estamos formalizando a proposta de prestação de serviços de ").$exibe['tiposite']." feito totalmente em ".$exibe['tecnologia'].".", 0, 'J');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 20, utf8_decode("1. APRESENTAÇÃO"), 0, 1, 'L');
+$pdf -> MultiCell(0, 15, utf8_decode("A Blush! Web e Publicidade focaliza seu campo de atuação em programação visual, web design, sinalização, produção editorial e outros. Atende empresas de pequeno, médio ou grande porte e pessoas físicas buscando sempre solucionar as necessidades de comunicação de seus clientes. Acompanha as fases de planejamento, design e produção, buscando oferecer um produto final condizente com a qualidade do projeto inicialmente apresentado."), 0, 'J');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 20, "2. PROJETO", 0, 1, 'L');
+$pdf -> MultiCell(0, 15, utf8_decode("").$exibe['tiposite2'].(" do site feito totalmente em ".$exibe['tecnologia'].", para a empresa ".$exibe['empresa'].utf8_decode(", incluindo as seguintes seções:")), 0, 'J');
+$pdf -> Cell(0, 20, " ", 0, 1, 'L');
+$pdf -> MultiCell(0, 15,  $exibe['obs'], 0, 'J');
+$pdf -> Cell(0, 20, " ", 0, 1, 'L');
+$pdf -> MultiCell(0, 15, utf8_decode("Obs: O conteúdo definitivo será estruturado de acordo com o planejamento estratégico, a ser definido entre o cliente e a Blush! Web e Publicidade e informado no contrato de prestação de serviços. No caso do site ser gerenciável pelo cliente a responsabilidade de criar, editar, alterar e excluir menu e produtos e também informações do site é toda do cliente."), 0, 'J');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 20, "3. ETAPAS DE DESENVOLVIMENTO DO PROJETO", 0, 1, 'L');
+$pdf -> Cell(0, 10, utf8_decode("1ª etapa: Planejamento"), 0, 1, 'L');
+$pdf -> Cell(0, 10, " ", 0, 1, 'L');
+$pdf -> Cell(0, 13, "a)	Listagem dos objetivos a serem satisfeitos;", 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("b)	Definição do conteúdo;"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("c)	Organização do conteúdo (estruturação dos níveis hierárquicos de informação);"), 0, 1, 'L');
+$pdf -> Cell(0, 20, " ", 0, 1, 'L');
+$pdf -> Cell(0, 10, utf8_decode("2ª etapa: Design"), 0, 1, 'L');
+$pdf -> Cell(0, 10, " ", 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("a)	Criação e desenvolvimento dos elementos de interface: identidade visual do site;"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("b)	Diagramação do conteúdo (textos e gráficos) da página;"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("c)	Seleção e tratamento de imagens;"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("d)	Aplicação e supervisão de testes de usabilidade."), 0, 1, 'L');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 10, utf8_decode("3ª etapa: Tecnologia"), 0, 1, 'L');
+$pdf -> Cell(0, 10, " ", 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("a)	Programação completa da página (conteúdo estático, dinâmico e sistemas);"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("b)	Publicação do site numa área de testes para revisão on-line;"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("c)	Publicação definitiva."), 0, 1, 'L');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 20, "4. CRONOGRAMA", 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("O cronograma proposto para a concretização deste projeto seguirá o prazo definido para as seguintes fases:"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("a)	1ª etapa (planejamento) - ".$exibe['etapa1']." dia(s) útil(eis);"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("b)	2ª etapa (design) - ".$exibe['etapa2']." dia(s) útil(eis);"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("c)	3ª etapa (tecnologia) - ".$exibe['etapa3']." dia(s) útil(eis)."), 0, 1, 'L');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> MultiCell(0, 13, utf8_decode("Obs: Prazo pedido para criação e testes. Para que não haja nenhum imprevisto e também podendo ser finalizado antes do prazo."), 0, 'J');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> MultiCell(0, 13, utf8_decode("O PRAZO DE ENTREGA SE INICIA A PARTIR DA DATA DO CONTRATO."), 0, 'J');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 20, "5. INVESTIMENTO E FORMA DE PAGAMENTO", 0, 1, 'L');
+$pdf -> MultiCell(0, 13, utf8_decode("Por tais serviços no item 2, deverá ser pago à Blush! Web e Publicidade o valor de R$ ".$exibe['valor']." (".utf8_encode($exibe['extenso']).") a ser pago em até ".$exibe['formapag']." no boleto bancário."), 0, 'J');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("Lembrando que para pagamentos em boleto nos valores acima serão acrescidos a taxa bancária."), 0, 1, 'L');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 20, utf8_decode("6. ÂMBITO DE INTERVENÇÃO DO CLIENTE"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("a)	Formação de uma equipe de acompanhamento que servirá como interlocutora durante o projeto;"), 0, 1, 'L');
+$pdf -> MultiCell(0, 13, utf8_decode("b) Fornecimento a Blush! Web e Publicidade de todas as informações e elementos necessários ao início e ao desenvolvimento do projeto, em suporte digital compatível com PCs e dentro de um período de tempo razoável de modo a evitar atrasos ou interrupções dos prazos estabelecidos no cronograma."), 0, 'J');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 20, utf8_decode("7. ÂMBITO DE INTERVENÇÃO DA BLUSH! WEB E PUBLICIDADE"), 0, 1, 'L');
+$pdf -> MultiCell(0, 13, utf8_decode("a) Prestar os serviços que são objeto da presente proposta com a competência e diligência adequadas ao cumprimento desta, defendendo os legítimos interesses e expectativas do cliente, principalmente no que se refere às relações com terceiros;"), 0, 'J');
+$pdf -> MultiCell(0, 13, utf8_decode("b) Comunicar ao cliente, após a respectiva verificação, qualquer circunstância que possa condicionar o regular desenvolvimento do projeto;"), 0, 'J');
+$pdf -> MultiCell(0, 13, utf8_decode("c) Não divulgar ou comunicar a terceiros, sem expresso consentimento do cliente, qualquer informação recebida, bem como elementos gráficos ou estudos relacionados com o projeto, sem prejuízo do exercício dos direitos reconhecidos no Código dos Direitos Autorais."), 0, 'J');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 20, utf8_decode("8. ATENDIMENTO AO CLIENTE"), 0, 1, 'L');
+$pdf -> MultiCell(0, 13, utf8_decode("A Blush! Web e Publicidade realizará o follow up deste projeto junto ao cliente, tendo em vista a observância dos prazos acordados e da qualidade dos serviços prestados."), 0, 'J');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 20, utf8_decode("9. CONSIDERAÇÕES GERAIS"), 0, 1, 'L');
+$pdf -> MultiCell(0, 13, utf8_decode("a) Sendo necessária digitalização de imagens em grandes formatos (maiores que ofício), produção de conteúdo, conversão de arquivos, digitação de textos e/ou outros serviços não previstos nesta proposta, serão cobrados à parte, mediante prévia autorização do cliente, como serviços complementares;"), 0, 'J');
+$pdf -> MultiCell(0, 13, utf8_decode("b) Não estão incluídos os serviços de fotografia e aluguel de banco de imagens;"), 0, 'J');
+$pdf -> MultiCell(0, 13, utf8_decode("c) No plano de manutenção o cliente terá direito às atualizações de acordo com plano contratado. Ultrapassando esse limite deverá ser feito um orçamento à parte com outras formas de pagamento se necessário;"), 0, 'J');
+$pdf -> MultiCell(0, 13, utf8_decode("d) Caso o cronograma se estenda por mais de um mês do prazo estabelecido, por motivos de atrasos de entrega de conteúdo ou outro motivo por parte do cliente, será feito um novo orçamento, para aprovação do cliente do pagamento de horas adicionais, sendo R$ 50,00 o valor da hora técnica. Esse procedimento visa exclusivamente o cumprimento do cronograma previsto;"), 0, 'J');
+$pdf -> MultiCell(0, 13, utf8_decode("e) Em caso de atraso no pagamento do valor da parcela, o cliente deverá pagar multa de 2% e 0,33% do valor da parcela por dia de atraso."), 0, 'J');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> MultiCell(0, 13, utf8_decode("Na expectativa de estar oferecendo a melhor oferta para os serviços solicitados, aproveitamos a oportunidade para apresentar protestos de consideração e apreço."), 0, 'J');
+$pdf -> Cell(0, 30, " ", 0, 1, 'L');
+$pdf -> Cell(0, 40, "Atenciosamente,", 0, 1, 'L');
+$pdf -> Image('img/assinatura.jpg');
+$pdf -> Cell(0, 5, "________________________________", 0, 1, 'L');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+$pdf -> Cell(0, 13, "Priscila R. da Costa ", 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("Direção Geral"), 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("contato@blushweb.com.br"), 0, 1, 'L');
+$pdf -> Cell(0, 13, "CNPJ: 15.704.888.0001-10", 0, 1, 'L');
+$pdf -> Cell(0, 13, "21 98386-4225", 0, 1, 'L');
+$pdf -> Cell(0, 90, "De acordo,", 0, 1, 'L');
+$pdf -> Cell(0, 13, utf8_decode("Favor responder o e-mail aprovando o orçamento."), 0, 1, 'L');
+$pdf -> Cell(0, 15, " ", 0, 1, 'L');
+
+$pdf -> OutPut("orcamento.pdf", "D");
+?>

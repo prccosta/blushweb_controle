@@ -1,0 +1,127 @@
+.textocinza11N {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11;
+	color: #666666;
+	bgcolor:#000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.textocinza11 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11;
+	color: #666666;
+	bgcolor:#000000;
+	font-weight: none;
+	text-decoration: none;
+}
+.textocinza10N {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10;
+	color: #878787;
+	bgcolor:#000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.textocinza10 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10;
+	color: #878787;
+	bgcolor:#000000;
+	font-weight: none;
+	text-decoration: none;
+}
+.TextoVermelho10 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10;
+	color: #FF0000;
+	bgcolor:#000000;
+	font-weight: none;
+	text-decoration: none;
+}
+.textopreto10 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10;
+	color: #000000;
+	bgcolor:#000000;
+	font-weight: none;
+	text-decoration: none;
+}
+.TextoBrancoMenu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+.TextoPretoMenu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.TextoSeparadorMenu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12;
+	color: #666666;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.Form2 {
+	height:16px;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11;
+	color: #666666;
+	width: 200px;
+}
+.Form {
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9;
+	color: #666666;
+}
+.Textarea {
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11;
+	color: #666666;
+}
+.botao {
+    font-size: 11px;
+    background-color: #FFFFFF;
+    color:#666666;
+    border: 1px solid #000000;
+    cursor: hand;
+    width: 80px;
+}
+.hidden
+{
+    visibility:hidden;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+BODY
+{
+	background-color: #fff;
+}
+.FundoCinza
+{
+	background-color: #CCCCCC;
+}
+#edicoes {
+	position:relative;
+	margin-top:155px;
+	margin-left: 20px;
+	}

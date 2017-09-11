@@ -1,0 +1,156 @@
+.TextoVermelho10 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11;
+	color: #FF0000;
+}
+.textocinza11N {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11;
+	color: #666666;
+	bgcolor:#000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.textocinza11 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11;
+	color: #666666;
+	bgcolor:#000000;
+	font-weight: none;
+	text-decoration: none;
+}
+.textocinza12 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12;
+	color: #666666;
+	bgcolor:#000000;
+	font-weight: none;
+	text-decoration: none;
+}
+.textocinza10 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10;
+	color: #878787;
+	bgcolor:#000000;
+	font-weight: none;
+	text-decoration: none;
+}
+.textopreto10 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10;
+	color: #000000;
+	font-weight: none;
+	text-decoration: none;
+}
+.textovermelho10 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10;
+	color: #FF0000;
+	text-decoration: none;
+}
+.Form2 {
+	height:16px;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11;
+	color: #666666;
+	width: 200px;
+}
+.Form {
+	height:16px;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9;
+	color: #666666;
+}
+.Textarea {
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11;
+	color: #666666;
+}
+.botao {
+    font-size: 11px;
+    background-color: #FFFFFF;
+    color:#666666;
+    border: 1px solid #000000;
+    cursor: hand;
+    width: 80px;
+}
+.painel
+{
+	background:#cccccc;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+
+.TextoCinza10N 
+{
+    color:#00aeef;
+    font-family:Verdana;
+    font-size:10px;
+    font-weight:bold;
+    text-align:center;
+    padding-right:4px;
+    text-decoration:none;
+}
+.TextoCinza10NR
+{
+    color:#00aeef;
+    font-family:Verdana;
+    font-size:10px;
+    font-weight:bold;
+    text-align:right;
+    padding-right:4px;
+    text-decoration:none;
+}
+.TextoCinza10N2 
+{
+    color:#00aeef;
+    font-family:Verdana;
+    font-size:14px;
+    font-weight:bold;
+    text-align:center;
+    padding-right:4px;
+    text-decoration:none;
+}
+
+.TextoCinza10NE
+{
+    color:#636563;
+    font-family:Verdana;
+    font-size:10px;
+    font-weight:bold;
+    text-align:left;
+    padding-left:4px;
+    text-decoration:none;
+}
+
+.TextoPreto10N 
+{
+    color:#00aeef;
+    font-family:Verdana;
+    font-size:10px;
+    font-weight:normal;
+    text-align:center;
+    text-decoration:none;
+}
+.TextoPreto10N a
+{
+    color:#00aeef;
+    font-family:Verdana;
+    font-size:10px;
+    font-weight:normal;
+    text-align:center;
+    text-decoration:none;
+}
